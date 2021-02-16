@@ -15,7 +15,7 @@ app.use(express.json());
 //not good coding practice probs
 const uri = process.env.MONGODB_URI;
 const local = process.env.REACT_APP_ATLAS_URI
-mongoose.connect(uri || local, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true } 
+mongoose.connect(uri, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true } 
     );
 const connection = mongoose.connection;
 connection.once('open', ()=> {

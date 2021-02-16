@@ -82,7 +82,7 @@ class QuoteContainer extends React.Component{
 
     loadQuotes(){
         let id = this.props.id
-        axios.get('http://localhost:5000/quotes')
+        axios.get('https://' + document.location.hostname + '/quotes')
             .then(response=> {
                 if (response.data.length > 0){
                     var temp = 0
@@ -156,7 +156,7 @@ class QuoteContainer extends React.Component{
             return
         }
         let id = this.state.quotes[this.state.index]._id;
-        axios.delete('http://localhost:5000/quotes/' + id)
+        axios.delete('https://' + document.location.hostname + '/quotes/' + id)
             .then(res => {
             console.log(res.data)
             this.setState({didMount: false})
@@ -172,7 +172,7 @@ class QuoteContainer extends React.Component{
         }
 
         //temp url!
-        axios.post('http://localhost:5000/quotes/add', dbQuote)
+        axios.post('https://' + document.location.hostname + '/quotes/add', dbQuote)
             .then((response) => {
                 console.log(response.data)
 

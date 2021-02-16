@@ -27,11 +27,11 @@ connection.once('open', function () {
   console.log("MongoDB connected");
 });
 
-var quotesRouter = require('./routes/quotes.js');
+var quotesRouter = require(__dirname + '/routes/quotes.js');
 
-var usersRouter = require('./routes/users.js');
+var usersRouter = require(__dirname + '/routes/users.js');
 
-var entriesRouter = require('./routes/entries.js');
+var entriesRouter = require(__dirname + '/routes/entries.js');
 
 app.use('/quotes', quotesRouter);
 app.use('/users', usersRouter);

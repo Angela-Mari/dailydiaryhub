@@ -56,7 +56,7 @@ function Hub() {
         if (newId !== "")
         {
             let id = newId;
-            axios.post('http://localhost:5000/entries/update/' + id, dbEntry)
+            axios.post('https://' + document.location.hostname + '/entries/update/' + id, dbEntry)
             .then((response) => {
                 console.log(response.data)
                 setId("")
@@ -70,7 +70,7 @@ function Hub() {
         }
 
         //temp url!
-        axios.post('http://localhost:5000/entries/add', dbEntry)
+        axios.post('https://' + document.location.hostname + '/entries/add', dbEntry)
             .then((response) => {
                 console.log(response.data)
                 setArray([...displayArray, myNewEntry])
@@ -95,7 +95,7 @@ function Hub() {
 
     function deleteEntry(editObject) {
         let id = editObject.id;
-        axios.delete('http://localhost:5000/entries/' + id)
+        axios.delete('https://' + document.location.hostname + '/entries/' + id)
             .then(res => {
                 console.log(res.data)
                 loadProfile()    
@@ -149,7 +149,7 @@ function Hub() {
     let sideColors = ["palevioletred", "aliceBlue", "SeaGreen"]
 
     function loadProfile() {
-        axios.get('http://localhost:5000/users')
+        axios.get('https://' + document.location.hostname + '/users')
             .then(response=> {
                 console.log(response.data)
                 if (response.data.length > 0){
@@ -172,7 +172,7 @@ function Hub() {
             });
         
         // get entires from db
-        axios.get('http://localhost:5000/entries')
+        axios.get('https://' + document.location.hostname + 'entries')
             .then(response=> {
                 console.log(response.data)
                 if (response.data.length > 0){
@@ -199,7 +199,7 @@ function Hub() {
     }  
     
     function addUser(dbUser) {
-        axios.post('http://localhost:5000/users/add', dbUser)
+        axios.post('https://' + document.location.hostname + '/users/add', dbUser)
         .then((response) => {
             console.log(response.data)
         });
@@ -227,7 +227,7 @@ function Hub() {
             theme: newIndex
         }
 
-        axios.post('http://localhost:5000/users/update/' + profile._id, updateDB)
+        axios.post('https://' + document.location.hostname + '/users/update/' + profile._id, updateDB)
       .then(res => console.log(res.data));
     }
 

@@ -3,9 +3,11 @@ Daily Diary hub is your corrner of the internet to write your reflections, hopes
 This web app is currently deployed on [heroku](https://dailydiaryhub.herokuapp.com/).
 
 ## Goals
-* Improve UI, currently is too simplistic 
-* Improve security of build (might have exposed enviornmental variables 🙀)
 * Migrate to AWS
+  * Working on deploying a smaller build to AWS and then will deply this one
+* Improve UI, currently is too simplistic 
+
+
 ## Future Features
 * Image upload
 * Multiple pages
